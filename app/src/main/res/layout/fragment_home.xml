@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".ui.home.HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Trending Now -->
+        <TextView
+            android:id="@+id/tvTrendingNow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Streaming Now"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#000"/>
+
+        <!-- Trending Movie Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardTrending"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
+            android:layout_marginTop="8dp">
+
+            <RelativeLayout
+                android:id="@+id/imgTrendingMovie"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- Background Image -->
+                <ImageView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_up" />
+
+                <!-- Live Label -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_marginStart="44dp"
+                    android:layout_marginBottom="28dp"
+                    android:background="@drawable/style_rounded_red"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="6dp">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_marginEnd="4dp"
+                        android:src="@drawable/ic_live"
+                        app:tint="@android:color/white" />
+
+                    <TextView
+                        android:id="@+id/tvDuration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Live"
+                        android:textColor="@android:color/white"
+                        android:layout_marginEnd="4dp"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <!-- Movie Info -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_marginStart="44dp"
+                    android:gravity="center_vertical"
+                    android:layout_alignParentBottom="true"
+                    android:orientation="vertical"
+                    android:padding="6dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvMovieTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="UP Disney | Pixar"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="#FFF" />
+                    </LinearLayout>
+
+                    <!-- Categories -->
+                    <LinearLayout
+                        android:id="@+id/llCategories"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_below="@id/tvMovieTitle">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Fantasy"
+                            android:textSize="12sp"
+                            android:background="@drawable/style_rounded_white"
+                            android:textColor="@color/white"
+                            android:paddingVertical="6dp"
+                            android:paddingHorizontal="12dp"/>
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:src="@drawable/ic_dot"
+                            app:tint="@color/white_50" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Family"
+                            android:textSize="12sp"
+                            android:textColor="#FFF"
+                            android:background="@drawable/style_rounded_white"
+                            android:paddingVertical="6dp"
+                            android:paddingHorizontal="12dp" />
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:src="@drawable/ic_dot"
+                            app:tint="@color/white_50" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Drama"
+                            android:textSize="12sp"
+                            android:textColor="#FFF"
+                            android:background="@drawable/style_rounded_white"
+                            android:paddingVertical="6dp"
+                            android:paddingHorizontal="12dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Box Office Section -->
+        <TextView
+            android:id="@+id/tvBoxOffice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Box Office"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:layout_marginTop="16dp"/>
+
+        <!-- RecyclerView for Movies -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvBoxOffice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:nestedScrollingEnabled="false"/>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

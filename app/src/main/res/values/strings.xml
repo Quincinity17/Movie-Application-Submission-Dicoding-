@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Movie Application</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="profile">Profile</string>
+    <string name="muhammad_faza_lamik">Muhammad Faza Lamik</string>
+</resources>
